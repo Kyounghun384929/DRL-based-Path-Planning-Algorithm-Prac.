@@ -51,3 +51,5 @@ Model Path: db\saves\dqn\20251223_141101\final.pth
 
 Kyounghun Kim  
 kyounghun2848@gmail.com  
+Seoul, South Korea  
+Kwangwoon Univ.  
