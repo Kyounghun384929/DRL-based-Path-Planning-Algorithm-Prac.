@@ -1,0 +1,29 @@
+{
+	"name": "MARL Path Planning Dev Container",
+	// "image": "kkyounghun/mydev:python313-torch290",
+	
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	
+	"runArgs": [
+		"--gpus",
+		"all"
+	],
+
+	"remoteEnv": {
+		"PYTHONPATH": "${containerWorkspaceFolder}"
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+			]
+		}
+	},
+	
+	"remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"postCreateCommand": "sudo apt update && sudo apt install -y python3-tk && pip install git+https://github.com/Kyounghun384929/kkh_utils.git"
+}
