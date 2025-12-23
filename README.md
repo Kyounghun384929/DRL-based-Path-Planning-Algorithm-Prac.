@@ -45,7 +45,7 @@
 
 ### 2D 환경 - DQN
 
-Model Path: db\saves\dqn\20251223_141101\final.pth
+Model Path: db\saves\dqn\2d\20251223_141101\final.pth
 
 ![2D_DQN](docs/2D-dqn.gif)
 
