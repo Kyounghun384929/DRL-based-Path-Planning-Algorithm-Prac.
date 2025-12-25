@@ -35,8 +35,10 @@ Currently, agents are trained using the DQN (Deep Q-Network) and PPO (Proximal P
    ```
 2. Train an agent
    ```bash
-   python train.py --algo dqn
+   python train_*.py
    ```
+   Replace `*` with the desired algorithm (e.g., `dqn`, `ppo`).
+   
 3. Evaluate an agent
    ```bash
    python test.py --model_path path_to_trained_model.pth
