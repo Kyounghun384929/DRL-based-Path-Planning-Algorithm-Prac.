@@ -1,7 +1,7 @@
 import torch
 
 
-class Simple2DContinuousEnv:
+class Simple2DContinuousENV:
     def __init__(self, **kwargs):
         """
         A simple 2D continuous environment where an agent moves in a 2D space
