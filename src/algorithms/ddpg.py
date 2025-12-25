@@ -32,8 +32,8 @@ class DDPGAgent:
         self.gamma       = kwargs.get("gamma", 0.99)
         self.tau         = kwargs.get("tau", 0.005)
         self.batch_size  = kwargs.get("batch_size", 64)
-        self.actor_lr    = kwargs.get("actor_lr", 1e-4)
-        self.critic_lr   = kwargs.get("critic_lr", 1e-3)
+        self.actor_lr    = kwargs.get("actor_lr", 3e-5)
+        self.critic_lr   = kwargs.get("critic_lr", 1e-4)
         self.buffer_size = kwargs.get("buffer_size", 1000000)
         
         self.actor = actor.to(self.device)

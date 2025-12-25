@@ -67,20 +67,20 @@ class Simple2DContinuousENV:
         distance_to_goal = torch.norm(self.state - self.goal_pos)
         
         if distance_to_goal < 3.0:
-            reward = torch.tensor(100.0, device=self.device, dtype=torch.float32)
-            done = torch.tensor(True, device=self.device, dtype=torch.bool)
+            reward = 100.0
+            done = torch.tensor(True, device=self.device, dtype=torch.float32)
         else:
-            reward = -distance_to_goal / dist_reward_norm
-            done = torch.tensor(False, device=self.device, dtype=torch.bool)
+            reward = -distance_to_goal
+            done = False
         
         if self.current_step >= self.max_episode_steps:
-            done = torch.tensor(True, device=self.device, dtype=torch.bool)
+            done = True
         
-        return reward, done
+        return reward/dist_reward_norm, done
 
 
 if __name__ == "__main__":
-    env = Simple2DContinuousEnv(device="cpu")
+    env = Simple2DContinuousENV(device="cpu")
     state = env.reset()
     done = False
     total_reward = 0.0
