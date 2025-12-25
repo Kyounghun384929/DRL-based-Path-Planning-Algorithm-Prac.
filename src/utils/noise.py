@@ -1,5 +1,6 @@
 import torch
 
+# TODO: Check ornstein-uhlenbeck noise algorithm: http://math.stackexchange.com/questions/1287634/implementing-ornstein-uhlenbeck-in-matlab
 class OUNoise:
     def __init__(self, action_dim, **kwargs):
         self.device     = kwargs.get("device", "cpu")

@@ -1,4 +1,3 @@
-from math import e
 import os
 import csv
 import time

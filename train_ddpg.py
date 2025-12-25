@@ -31,7 +31,7 @@ def train(num_episodes=1000):
             
             next_state, reward, done = env.step(action)
             
-            done = done.to(DEVICE, dtype=torch.float32)
+            done = torch.tensor(done, device=DEVICE, dtype=torch.float32)
             
             agent.replay_buffer.push(state, action, reward, next_state, done)
             
@@ -48,7 +48,10 @@ def train(num_episodes=1000):
         
         print(f"Episode {episode+1}/{num_episodes}, Total Reward: {total_reward:.3f}, Steps: {env.current_step}/{env.max_episode_steps}, Reach: {reach}, Last State: {state.cpu().numpy()}")
     
-    agent.save("ddpg_agent_1.pth")
+    torch.save({
+        'actor_state_dict': agent.actor.state_dict(),
+        'critic_state_dict': agent.critic.state_dict(),
+    }, "ddpg_actor_critic_1.pth")
 
 if __name__ == "__main__":
     train(num_episodes=1000)

@@ -65,6 +65,9 @@ Settings:
 
 ![2D_PPO](docs/2D-ppo.gif)
 
+# Thanks to  
+...
+
 Kyounghun Kim  
 sdrudgnsdl@kw.ac.kr  
 Seoul, South Korea  
