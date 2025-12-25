@@ -65,6 +65,14 @@ Settings:
 
 ![2D_PPO](docs/2D-ppo.gif)
 
+### DDPG
+Model Path: db\saves\ddpg\2d\ddpg_final.pth  
+Settings:
+- max_steps=200
+- max_episodes=1000
+
+![2D_DDPG](docs/2D-ddpg.gif)
+
 # Thanks to  
 ...
 
