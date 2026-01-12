@@ -73,10 +73,13 @@ class Env2DMA:
         """
         self.current_step += 1
         
+        dist_before = torch.norm(self.state - self.goal_pos, dim=1)
+        already_done_mask = dist_before < 3.0
+        
         # Update states based on actions
         deltas = self.action_deltas[actions]  # [num_agents, 2]
-        self.state += deltas
-        
+        active_mask = (~already_done_mask).float().unsqueeze(1) # (N, 1)
+        self.state += deltas * active_mask
         self.state = torch.clamp(self.state, torch.tensor(0.0, device=self.device), self.env_size)
         
         # Calculate rewards
@@ -86,10 +89,10 @@ class Env2DMA:
         # Check for done
         success_mask = distances < 3.0
         timeout = self.current_step >= self.max_episode_steps
-        
         done = (success_mask | timeout).unsqueeze(1)  # (N, 1)
         
         rewards[success_mask] = 100.0
+        rewards[already_done_mask] = 0.0
         
         return self.state.clone(), rewards.unsqueeze(1), done # (N, 1)
     
