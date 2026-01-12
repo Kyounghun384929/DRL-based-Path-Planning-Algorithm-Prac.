@@ -1,0 +1,1 @@
+"""Value Decomposition Networks (VDN) algorithm."""
