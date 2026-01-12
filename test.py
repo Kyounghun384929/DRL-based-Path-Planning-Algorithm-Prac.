@@ -9,7 +9,7 @@ import time
 
 from src.envs.env_2d import Simple2DGridENV
 from src.envs.env_3d import Simple3DGridENV
-from src.algorithms.dqn import DQNAgent
+from src.algorithms import DQNAgent
 
 # Optional: Custom style if available
 try:
