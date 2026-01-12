@@ -102,6 +102,12 @@ ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
 WORKDIR /workspaces
 
+# 사용자 전환 전 설정 권장
+USER root
+
+# 사용자명(초록) ➜(흰색) 경로(파란색) 설정
+RUN echo "export PS1='\[\033[01;32m\]\u\[\033[00m\] ➜ \[\033[01;34m\]\w\[\033[00m\] \$ '" >> /home/${USERNAME}/.bashrc
+
 # 최종 사용자 전환
 USER $USERNAME
 
