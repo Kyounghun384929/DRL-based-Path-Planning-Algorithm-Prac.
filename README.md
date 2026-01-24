@@ -1,3 +1,6 @@
+# Repository 구조 및 코드가 정리될 예정  
+
+
 # Reinforcement Learning-based Path Planning Algorithms Repository
 
 This repository aims to implement path planning algorithms based on deep reinforcement learning (DRL).
@@ -89,4 +92,5 @@ Settings :
 Kyounghun Kim  
 sdrudgnsdl@kw.ac.kr  
 Seoul, South Korea  
+
 Kwangwoon Univ.
